@@ -22,7 +22,7 @@ namespace Reversi
 
         private readonly Start parent;
         private State state = State.Black;
-        private readonly List<Button> buttons = new List<Button>();
+        private List<Button> buttons = new List<Button>();
         private ReversiGame game;
         private readonly StatePlace[,] board;
         private readonly Stopwatch timer = new Stopwatch();
@@ -56,6 +56,11 @@ namespace Reversi
 
         private void InitButtons()
         {
+            for (int i = 0; i < 64; i++)
+            {
+                buttons.Add(new Button());
+            }
+
             // Add buttons to the list
             foreach (var layout in Controls)
             {
@@ -65,7 +70,7 @@ namespace Reversi
                     {
                         if (button is Button gameButton)
                         {
-                            buttons.Add(gameButton);
+                            buttons[gameButton.TabIndex] =  gameButton;
                         }
                     }
                 }
