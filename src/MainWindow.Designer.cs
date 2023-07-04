@@ -210,7 +210,7 @@ namespace Reversi
             this.button64.Size = new System.Drawing.Size(116, 86);
             this.button64.TabIndex = 63;
             this.button64.UseVisualStyleBackColor = true;
-            this.button64.Click += new System.EventHandler(this.button64_Click);
+            this.button64.Click += new System.EventHandler(this.Button64_Click);
             // 
             // button63
             // 
@@ -223,7 +223,7 @@ namespace Reversi
             this.button63.Size = new System.Drawing.Size(115, 86);
             this.button63.TabIndex = 62;
             this.button63.UseVisualStyleBackColor = true;
-            this.button63.Click += new System.EventHandler(this.button63_Click);
+            this.button63.Click += new System.EventHandler(this.Button63_Click);
             // 
             // button62
             // 
@@ -236,7 +236,7 @@ namespace Reversi
             this.button62.Size = new System.Drawing.Size(115, 86);
             this.button62.TabIndex = 61;
             this.button62.UseVisualStyleBackColor = true;
-            this.button62.Click += new System.EventHandler(this.button62_Click);
+            this.button62.Click += new System.EventHandler(this.Button62_Click);
             // 
             // button61
             // 
@@ -249,7 +249,7 @@ namespace Reversi
             this.button61.Size = new System.Drawing.Size(115, 86);
             this.button61.TabIndex = 60;
             this.button61.UseVisualStyleBackColor = true;
-            this.button61.Click += new System.EventHandler(this.button61_Click);
+            this.button61.Click += new System.EventHandler(this.Button61_Click);
             // 
             // button60
             // 
@@ -262,7 +262,7 @@ namespace Reversi
             this.button60.Size = new System.Drawing.Size(115, 86);
             this.button60.TabIndex = 59;
             this.button60.UseVisualStyleBackColor = true;
-            this.button60.Click += new System.EventHandler(this.button60_Click);
+            this.button60.Click += new System.EventHandler(this.Button60_Click);
             // 
             // button59
             // 
@@ -275,7 +275,7 @@ namespace Reversi
             this.button59.Size = new System.Drawing.Size(115, 86);
             this.button59.TabIndex = 58;
             this.button59.UseVisualStyleBackColor = true;
-            this.button59.Click += new System.EventHandler(this.button59_Click);
+            this.button59.Click += new System.EventHandler(this.Button59_Click);
             // 
             // button58
             // 
@@ -288,7 +288,7 @@ namespace Reversi
             this.button58.Size = new System.Drawing.Size(115, 86);
             this.button58.TabIndex = 57;
             this.button58.UseVisualStyleBackColor = true;
-            this.button58.Click += new System.EventHandler(this.button58_Click);
+            this.button58.Click += new System.EventHandler(this.Button58_Click);
             // 
             // button57
             // 
@@ -301,7 +301,7 @@ namespace Reversi
             this.button57.Size = new System.Drawing.Size(115, 86);
             this.button57.TabIndex = 56;
             this.button57.UseVisualStyleBackColor = true;
-            this.button57.Click += new System.EventHandler(this.button57_Click);
+            this.button57.Click += new System.EventHandler(this.Button57_Click);
             // 
             // button56
             // 
@@ -314,7 +314,7 @@ namespace Reversi
             this.button56.Size = new System.Drawing.Size(116, 84);
             this.button56.TabIndex = 55;
             this.button56.UseVisualStyleBackColor = true;
-            this.button56.Click += new System.EventHandler(this.button56_Click);
+            this.button56.Click += new System.EventHandler(this.Button56_Click);
             // 
             // button55
             // 
@@ -327,7 +327,7 @@ namespace Reversi
             this.button55.Size = new System.Drawing.Size(115, 84);
             this.button55.TabIndex = 54;
             this.button55.UseVisualStyleBackColor = true;
-            this.button55.Click += new System.EventHandler(this.button55_Click);
+            this.button55.Click += new System.EventHandler(this.Button55_Click);
             // 
             // button54
             // 
@@ -340,7 +340,7 @@ namespace Reversi
             this.button54.Size = new System.Drawing.Size(115, 84);
             this.button54.TabIndex = 53;
             this.button54.UseVisualStyleBackColor = true;
-            this.button54.Click += new System.EventHandler(this.button54_Click);
+            this.button54.Click += new System.EventHandler(this.Button54_Click);
             // 
             // button53
             // 
@@ -353,7 +353,7 @@ namespace Reversi
             this.button53.Size = new System.Drawing.Size(115, 84);
             this.button53.TabIndex = 52;
             this.button53.UseVisualStyleBackColor = true;
-            this.button53.Click += new System.EventHandler(this.button53_Click);
+            this.button53.Click += new System.EventHandler(this.Button53_Click);
             // 
             // button52
             // 
@@ -366,7 +366,7 @@ namespace Reversi
             this.button52.Size = new System.Drawing.Size(115, 84);
             this.button52.TabIndex = 51;
             this.button52.UseVisualStyleBackColor = true;
-            this.button52.Click += new System.EventHandler(this.button52_Click);
+            this.button52.Click += new System.EventHandler(this.Button52_Click);
             // 
             // button51
             // 
@@ -379,7 +379,7 @@ namespace Reversi
             this.button51.Size = new System.Drawing.Size(115, 84);
             this.button51.TabIndex = 50;
             this.button51.UseVisualStyleBackColor = true;
-            this.button51.Click += new System.EventHandler(this.button51_Click);
+            this.button51.Click += new System.EventHandler(this.Button51_Click);
             // 
             // button50
             // 
@@ -392,7 +392,7 @@ namespace Reversi
             this.button50.Size = new System.Drawing.Size(115, 84);
             this.button50.TabIndex = 49;
             this.button50.UseVisualStyleBackColor = true;
-            this.button50.Click += new System.EventHandler(this.button50_Click);
+            this.button50.Click += new System.EventHandler(this.Button50_Click);
             // 
             // button49
             // 
@@ -405,7 +405,7 @@ namespace Reversi
             this.button49.Size = new System.Drawing.Size(115, 84);
             this.button49.TabIndex = 48;
             this.button49.UseVisualStyleBackColor = true;
-            this.button49.Click += new System.EventHandler(this.button49_Click);
+            this.button49.Click += new System.EventHandler(this.Button49_Click);
             // 
             // button48
             // 
@@ -418,7 +418,7 @@ namespace Reversi
             this.button48.Size = new System.Drawing.Size(116, 84);
             this.button48.TabIndex = 47;
             this.button48.UseVisualStyleBackColor = true;
-            this.button48.Click += new System.EventHandler(this.button48_Click);
+            this.button48.Click += new System.EventHandler(this.Button48_Click);
             // 
             // button47
             // 
@@ -431,7 +431,7 @@ namespace Reversi
             this.button47.Size = new System.Drawing.Size(115, 84);
             this.button47.TabIndex = 46;
             this.button47.UseVisualStyleBackColor = true;
-            this.button47.Click += new System.EventHandler(this.button47_Click);
+            this.button47.Click += new System.EventHandler(this.Button47_Click);
             // 
             // button46
             // 
@@ -444,7 +444,7 @@ namespace Reversi
             this.button46.Size = new System.Drawing.Size(115, 84);
             this.button46.TabIndex = 45;
             this.button46.UseVisualStyleBackColor = true;
-            this.button46.Click += new System.EventHandler(this.button46_Click);
+            this.button46.Click += new System.EventHandler(this.Button46_Click);
             // 
             // button45
             // 
@@ -457,7 +457,7 @@ namespace Reversi
             this.button45.Size = new System.Drawing.Size(115, 84);
             this.button45.TabIndex = 44;
             this.button45.UseVisualStyleBackColor = true;
-            this.button45.Click += new System.EventHandler(this.button45_Click);
+            this.button45.Click += new System.EventHandler(this.Button45_Click);
             // 
             // button44
             // 
@@ -470,7 +470,7 @@ namespace Reversi
             this.button44.Size = new System.Drawing.Size(115, 84);
             this.button44.TabIndex = 43;
             this.button44.UseVisualStyleBackColor = true;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
+            this.button44.Click += new System.EventHandler(this.Button44_Click);
             // 
             // button43
             // 
@@ -483,7 +483,7 @@ namespace Reversi
             this.button43.Size = new System.Drawing.Size(115, 84);
             this.button43.TabIndex = 42;
             this.button43.UseVisualStyleBackColor = true;
-            this.button43.Click += new System.EventHandler(this.button43_Click);
+            this.button43.Click += new System.EventHandler(this.Button43_Click);
             // 
             // button42
             // 
@@ -496,7 +496,7 @@ namespace Reversi
             this.button42.Size = new System.Drawing.Size(115, 84);
             this.button42.TabIndex = 41;
             this.button42.UseVisualStyleBackColor = true;
-            this.button42.Click += new System.EventHandler(this.button42_Click);
+            this.button42.Click += new System.EventHandler(this.Button42_Click);
             // 
             // button41
             // 
@@ -509,7 +509,7 @@ namespace Reversi
             this.button41.Size = new System.Drawing.Size(115, 84);
             this.button41.TabIndex = 40;
             this.button41.UseVisualStyleBackColor = true;
-            this.button41.Click += new System.EventHandler(this.button41_Click);
+            this.button41.Click += new System.EventHandler(this.Button41_Click);
             // 
             // button40
             // 
@@ -522,7 +522,7 @@ namespace Reversi
             this.button40.Size = new System.Drawing.Size(116, 84);
             this.button40.TabIndex = 39;
             this.button40.UseVisualStyleBackColor = true;
-            this.button40.Click += new System.EventHandler(this.button40_Click);
+            this.button40.Click += new System.EventHandler(this.Button40_Click);
             // 
             // button39
             // 
@@ -535,7 +535,7 @@ namespace Reversi
             this.button39.Size = new System.Drawing.Size(115, 84);
             this.button39.TabIndex = 38;
             this.button39.UseVisualStyleBackColor = true;
-            this.button39.Click += new System.EventHandler(this.button39_Click);
+            this.button39.Click += new System.EventHandler(this.Button39_Click);
             // 
             // button38
             // 
@@ -548,7 +548,7 @@ namespace Reversi
             this.button38.Size = new System.Drawing.Size(115, 84);
             this.button38.TabIndex = 37;
             this.button38.UseVisualStyleBackColor = true;
-            this.button38.Click += new System.EventHandler(this.button38_Click);
+            this.button38.Click += new System.EventHandler(this.Button38_Click);
             // 
             // button37
             // 
@@ -561,7 +561,7 @@ namespace Reversi
             this.button37.Size = new System.Drawing.Size(115, 84);
             this.button37.TabIndex = 36;
             this.button37.UseVisualStyleBackColor = true;
-            this.button37.Click += new System.EventHandler(this.button37_Click);
+            this.button37.Click += new System.EventHandler(this.Button37_Click);
             // 
             // button36
             // 
@@ -574,7 +574,7 @@ namespace Reversi
             this.button36.Size = new System.Drawing.Size(115, 84);
             this.button36.TabIndex = 35;
             this.button36.UseVisualStyleBackColor = true;
-            this.button36.Click += new System.EventHandler(this.button36_Click);
+            this.button36.Click += new System.EventHandler(this.Button36_Click);
             // 
             // button35
             // 
@@ -587,7 +587,7 @@ namespace Reversi
             this.button35.Size = new System.Drawing.Size(115, 84);
             this.button35.TabIndex = 34;
             this.button35.UseVisualStyleBackColor = true;
-            this.button35.Click += new System.EventHandler(this.button35_Click);
+            this.button35.Click += new System.EventHandler(this.Button35_Click);
             // 
             // button34
             // 
@@ -600,7 +600,7 @@ namespace Reversi
             this.button34.Size = new System.Drawing.Size(115, 84);
             this.button34.TabIndex = 33;
             this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
+            this.button34.Click += new System.EventHandler(this.Button34_Click);
             // 
             // button33
             // 
@@ -613,7 +613,7 @@ namespace Reversi
             this.button33.Size = new System.Drawing.Size(115, 84);
             this.button33.TabIndex = 32;
             this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
+            this.button33.Click += new System.EventHandler(this.Button33_Click);
             // 
             // button32
             // 
@@ -626,7 +626,7 @@ namespace Reversi
             this.button32.Size = new System.Drawing.Size(116, 84);
             this.button32.TabIndex = 31;
             this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
+            this.button32.Click += new System.EventHandler(this.Button32_Click);
             // 
             // button31
             // 
@@ -639,7 +639,7 @@ namespace Reversi
             this.button31.Size = new System.Drawing.Size(115, 84);
             this.button31.TabIndex = 30;
             this.button31.UseVisualStyleBackColor = true;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
+            this.button31.Click += new System.EventHandler(this.Button31_Click);
             // 
             // button30
             // 
@@ -652,7 +652,7 @@ namespace Reversi
             this.button30.Size = new System.Drawing.Size(115, 84);
             this.button30.TabIndex = 29;
             this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
+            this.button30.Click += new System.EventHandler(this.Button30_Click);
             // 
             // button29
             // 
@@ -665,7 +665,7 @@ namespace Reversi
             this.button29.Size = new System.Drawing.Size(115, 84);
             this.button29.TabIndex = 28;
             this.button29.UseVisualStyleBackColor = true;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
+            this.button29.Click += new System.EventHandler(this.Button29_Click);
             // 
             // button27
             // 
@@ -679,7 +679,7 @@ namespace Reversi
             this.button27.Size = new System.Drawing.Size(115, 84);
             this.button27.TabIndex = 26;
             this.button27.UseVisualStyleBackColor = false;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
+            this.button27.Click += new System.EventHandler(this.Button27_Click);
             // 
             // button26
             // 
@@ -692,7 +692,7 @@ namespace Reversi
             this.button26.Size = new System.Drawing.Size(115, 84);
             this.button26.TabIndex = 25;
             this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
+            this.button26.Click += new System.EventHandler(this.Button26_Click);
             // 
             // button25
             // 
@@ -705,7 +705,7 @@ namespace Reversi
             this.button25.Size = new System.Drawing.Size(115, 84);
             this.button25.TabIndex = 24;
             this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.button25.Click += new System.EventHandler(this.Button25_Click);
             // 
             // button24
             // 
@@ -718,7 +718,7 @@ namespace Reversi
             this.button24.Size = new System.Drawing.Size(116, 84);
             this.button24.TabIndex = 23;
             this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
+            this.button24.Click += new System.EventHandler(this.Button24_Click);
             // 
             // button23
             // 
@@ -731,7 +731,7 @@ namespace Reversi
             this.button23.Size = new System.Drawing.Size(115, 84);
             this.button23.TabIndex = 22;
             this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
+            this.button23.Click += new System.EventHandler(this.Button23_Click);
             // 
             // button22
             // 
@@ -744,7 +744,7 @@ namespace Reversi
             this.button22.Size = new System.Drawing.Size(115, 84);
             this.button22.TabIndex = 21;
             this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.button22.Click += new System.EventHandler(this.Button22_Click);
             // 
             // button21
             // 
@@ -757,7 +757,7 @@ namespace Reversi
             this.button21.Size = new System.Drawing.Size(115, 84);
             this.button21.TabIndex = 20;
             this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.button21.Click += new System.EventHandler(this.Button21_Click);
             // 
             // button20
             // 
@@ -771,7 +771,7 @@ namespace Reversi
             this.button20.Size = new System.Drawing.Size(115, 84);
             this.button20.TabIndex = 19;
             this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.button20.Click += new System.EventHandler(this.Button20_Click);
             // 
             // button19
             // 
@@ -784,7 +784,7 @@ namespace Reversi
             this.button19.Size = new System.Drawing.Size(115, 84);
             this.button19.TabIndex = 18;
             this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.button19.Click += new System.EventHandler(this.Button19_Click);
             // 
             // button18
             // 
@@ -797,7 +797,7 @@ namespace Reversi
             this.button18.Size = new System.Drawing.Size(115, 84);
             this.button18.TabIndex = 17;
             this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.button18.Click += new System.EventHandler(this.Button18_Click);
             // 
             // button17
             // 
@@ -810,7 +810,7 @@ namespace Reversi
             this.button17.Size = new System.Drawing.Size(115, 84);
             this.button17.TabIndex = 16;
             this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.button17.Click += new System.EventHandler(this.Button17_Click);
             // 
             // button16
             // 
@@ -823,7 +823,7 @@ namespace Reversi
             this.button16.Size = new System.Drawing.Size(116, 84);
             this.button16.TabIndex = 15;
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button16.Click += new System.EventHandler(this.Button16_Click);
             // 
             // button15
             // 
@@ -836,7 +836,7 @@ namespace Reversi
             this.button15.Size = new System.Drawing.Size(115, 84);
             this.button15.TabIndex = 14;
             this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button15.Click += new System.EventHandler(this.Button15_Click);
             // 
             // button14
             // 
@@ -849,7 +849,7 @@ namespace Reversi
             this.button14.Size = new System.Drawing.Size(115, 84);
             this.button14.TabIndex = 13;
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
             // button13
             // 
@@ -862,7 +862,7 @@ namespace Reversi
             this.button13.Size = new System.Drawing.Size(115, 84);
             this.button13.TabIndex = 12;
             this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button13.Click += new System.EventHandler(this.Button13_Click);
             // 
             // button12
             // 
@@ -875,7 +875,7 @@ namespace Reversi
             this.button12.Size = new System.Drawing.Size(115, 84);
             this.button12.TabIndex = 11;
             this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
             // button11
             // 
@@ -888,7 +888,7 @@ namespace Reversi
             this.button11.Size = new System.Drawing.Size(115, 84);
             this.button11.TabIndex = 10;
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
             // button10
             // 
@@ -901,7 +901,7 @@ namespace Reversi
             this.button10.Size = new System.Drawing.Size(115, 84);
             this.button10.TabIndex = 9;
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // button9
             // 
@@ -914,7 +914,7 @@ namespace Reversi
             this.button9.Size = new System.Drawing.Size(115, 84);
             this.button9.TabIndex = 8;
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button8
             // 
@@ -927,7 +927,7 @@ namespace Reversi
             this.button8.Size = new System.Drawing.Size(116, 84);
             this.button8.TabIndex = 7;
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // button7
             // 
@@ -940,7 +940,7 @@ namespace Reversi
             this.button7.Size = new System.Drawing.Size(115, 84);
             this.button7.TabIndex = 6;
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button6
             // 
@@ -953,7 +953,7 @@ namespace Reversi
             this.button6.Size = new System.Drawing.Size(115, 84);
             this.button6.TabIndex = 5;
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button5
             // 
@@ -966,7 +966,7 @@ namespace Reversi
             this.button5.Size = new System.Drawing.Size(115, 84);
             this.button5.TabIndex = 4;
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // button4
             // 
@@ -979,7 +979,7 @@ namespace Reversi
             this.button4.Size = new System.Drawing.Size(115, 84);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 
@@ -992,7 +992,7 @@ namespace Reversi
             this.button3.Size = new System.Drawing.Size(115, 84);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -1006,7 +1006,7 @@ namespace Reversi
             this.button2.Size = new System.Drawing.Size(115, 84);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -1020,7 +1020,7 @@ namespace Reversi
             this.button1.Size = new System.Drawing.Size(115, 84);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button28
             // 
@@ -1033,7 +1033,7 @@ namespace Reversi
             this.button28.Size = new System.Drawing.Size(115, 84);
             this.button28.TabIndex = 27;
             this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
+            this.button28.Click += new System.EventHandler(this.Button28_Click);
             // 
             // messageBox
             // 
@@ -1059,7 +1059,7 @@ namespace Reversi
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -1071,7 +1071,7 @@ namespace Reversi
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // helpLabel
             // 
@@ -1085,7 +1085,7 @@ namespace Reversi
             this.helpLabel.TabIndex = 4;
             this.helpLabel.Text = "help";
             this.helpLabel.Visible = false;
-            this.helpLabel.Click += new System.EventHandler(this.helpLabel_Click);
+            this.helpLabel.Click += new System.EventHandler(this.HelpLabel_Click);
             // 
             // endRectangle
             // 
@@ -1099,7 +1099,7 @@ namespace Reversi
             this.endRectangle.TabIndex = 6;
             this.endRectangle.TabStop = false;
             this.endRectangle.Visible = false;
-            this.endRectangle.Click += new System.EventHandler(this.endRectangle_Click);
+            this.endRectangle.Click += new System.EventHandler(this.EndRectangle_Click);
             // 
             // endBox
             // 
@@ -1115,7 +1115,7 @@ namespace Reversi
             this.endBox.TabIndex = 7;
             this.endBox.TabStop = false;
             this.endBox.Visible = false;
-            this.endBox.Click += new System.EventHandler(this.endBox_Click);
+            this.endBox.Click += new System.EventHandler(this.EndBox_Click);
             // 
             // MainWindow
             // 

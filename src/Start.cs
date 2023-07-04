@@ -27,26 +27,26 @@ namespace Reversi
         {
             int size = tableLayoutPanel1.Size.Width / 10;
             title.Font = new Font("Harlow Solid Italic", size, FontStyle.Italic);
-            buttonStartGame.Font = new Font("Comic Sans MS", size/3);
+            buttonStartGame.Font = new Font("Comic Sans MS", size / 3);
             button1.Font = new Font("Comic Sans MS", size / 7);
             button2.Font = new Font("Comic Sans MS", size / 7);
         }
 
-        private void buttonStartGame_Click(object sender, EventArgs e)
+        private void ButtonStartGame_Click(object sender, EventArgs e)
         {
             gameForm = new MainWindow(this, ai);
             gameForm.Show();
             Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             ai = true;
             button1.BackColor = Color.FromName("ActiveBorder");
             button2.BackColor = Color.FromName("Window");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             ai = false;
             button1.BackColor = Color.FromName("Window");

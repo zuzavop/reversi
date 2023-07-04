@@ -12,31 +12,33 @@ using System.Collections.Generic;
 
 namespace Reversi
 {
-    public enum StatePlace { empty = 0, white = 1, black = -1 } //možné stavy jednotlivých polí
+    public enum StatePlace { empty = 0, white = 1, black = -1 } // possible states of each stones
 
     public struct MinimaxMove
     {
-        public int row, column, value;
+        public int Row { get; }
+        public int Column { get; }
+        public int Value { set;  get; }
 
         public MinimaxMove(int row, int col, int val)
         {
-            this.row = row;
-            column = col;
-            value = val;
+            Row = row;
+            Column = col;
+            Value = val;
         }
 
         public MinimaxMove(int row, int col)
         {
-            this.row = row;
-            this.column = col;
-            value = 0;
+            Row = row;
+            Column = col;
+            Value = 0;
         }
 
         public MinimaxMove(int val)
         {
-            row = column = -1;
-            value = val;
-        }        
+            Row = Column = -1;
+            Value = val;
+        }
     }
 
     public abstract class Minimax
@@ -47,18 +49,17 @@ namespace Reversi
 
         public MinimaxMove Search(StatePlace[,] state, bool isWhite)
         {
-            maxDepth = MaxDepth == -1 ? int.MaxValue : MaxDepth; //pokud je max hloubka nastavena na -1 prohledává se celý strom
+            maxDepth = MaxDepth == -1 ? int.MaxValue : MaxDepth; // if max depth is set to -1 search throught whole tree
+            _ = new MinimaxMove(0);
 
-            var nextMove = new MinimaxMove(0);
+            var nextMove = RealSearch(state, isWhite, int.MinValue, int.MaxValue, 0);
 
-            nextMove = RealSearch(state, isWhite, int.MinValue, int.MaxValue, 0); //vnitřní prohledávání aktuální plochy
-
-            if (nextMove.row == -1) // pokud nebyl nalezen ideální vybere se jakýkoliv z možných
+            if (nextMove.Row == -1) // if ideal move wasnt found - choose randomly
             {
                 foreach (var move in GetMoves(state, isWhite))
                 {
                     nextMove = move;
-                    nextMove.value = isWhite ? int.MinValue : int.MaxValue;
+                    nextMove.Value = isWhite ? int.MinValue : int.MaxValue;
                     break;
                 }
             }
@@ -79,57 +80,54 @@ namespace Reversi
         {
             if (depth >= maxDepth)
             {
-                return new MinimaxMove(EvaluateHeuristic(state)); // využití heuristiky
+                return new MinimaxMove(EvaluateHeuristic(state)); // use of heuristic
             }
 
             var bestMove = new MinimaxMove(isWhite ? int.MinValue : int.MaxValue);
 
-            var validMoves = GetMoves(state, isWhite); //nalezení všech proveditelných platných tahů
+            var validMoves = GetMoves(state, isWhite); // found of possible moves
 
             bool availabilityOfMoves = false;
             foreach (var move in validMoves)
             {
                 availabilityOfMoves = true;
 
-                if (depth == 0) //pokud je možné v aktuálním tahu obsadit rohové pole, vybere se toto pole jako nejlepší
+                if (depth == 0 && IsInCorner(move)) // if current move in corner, choose that as best
                 {
-                    if (IsInCorner(move))
-                    {
-                        return move;
-                    }
+                    return move;
                 }
 
-                var currentMove = move; 
-                // spočtení hodnoty aktuálního možného kroku
-                currentMove.value = RealSearch(GetCurrentBoardState(state, currentMove, isWhite), !isWhite, alpha, beta, depth + 1).value;
+                var currentMove = move;
+                // count values of possible moves
+                currentMove.Value = RealSearch(GetCurrentBoardState(state, currentMove, isWhite), !isWhite, alpha, beta, depth + 1).Value;
 
                 if (isWhite)
                 {
-                    if (currentMove.value > bestMove.value) bestMove = currentMove; 
-                    
-                    if (bestMove.value >= beta) break; //kvůli alpha-beta ořezávání
+                    if (currentMove.Value > bestMove.Value) bestMove = currentMove;
 
-                    alpha = Math.Max(alpha, bestMove.value); //nastavení alphy
+                    if (bestMove.Value >= beta) break; // because of alpha-beta trimming
+
+                    alpha = Math.Max(alpha, bestMove.Value); // set alpha
                 }
                 else
                 {
-                    if (currentMove.value < bestMove.value) bestMove = currentMove;
-                    
-                    if (bestMove.value <= alpha) break; //kvůli alpha-beta ořezávání
-                    
-                    beta = Math.Min(beta, bestMove.value); //nastavení bety
+                    if (currentMove.Value < bestMove.Value) bestMove = currentMove;
+
+                    if (bestMove.Value <= alpha) break; // because of alpha-beta trimming
+
+                    beta = Math.Min(beta, bestMove.Value); // set beta
                 }
             }
 
-            if (!availabilityOfMoves) //pokud nejsou v této vrstvě dostupné tahy, prohledává se další vrstva
+            if (!availabilityOfMoves) // if none possible moves in this layer, search throught next layer
             {
-                bestMove.value = RealSearch(state, !isWhite, alpha, beta, depth + 1).value;
+                bestMove.Value = RealSearch(state, !isWhite, alpha, beta, depth + 1).Value;
             }
 
             return bestMove;
         }
-        
+
     }
-    
-    
+
+
 }

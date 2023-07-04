@@ -7,41 +7,46 @@ Programování 2 (NPRG031)
 letní semestr 2020/21
 */
 
-using System;
 using System.Collections.Generic;
 
 namespace Reversi
 {
     class ReversiGame : Minimax
     {
+        private readonly int numberRows, numberCols;
+        private int depth;
+
         public ReversiGame(int numRows, int numCols, bool isWhiteStart)
         {
             numberRows = numRows;
-            numberCol = numCols;
+            numberCols = numCols;
             Board = new StatePlace[numRows, numCols];
-            for (int i = 0; i < numRows; i++)
+
+            InitializeBoard();
+
+            IsWhite = isWhiteStart; // if true start player has white stones
+        }
+
+        public StatePlace[,] Board { get; }
+        public bool IsWhite { get; private set; }
+
+        public override int MaxDepth => depth;
+
+        private void InitializeBoard()
+        {
+            for (int i = 0; i < numberRows; i++)
             {
-                for (int j = 0; j < numCols; j++)
+                for (int j = 0; j < numberCols; j++)
                 {
                     Board[i, j] = StatePlace.empty;
                 }
             }
 
-            //nastavení počátečních pozic
             Board[3, 3] = StatePlace.white;
             Board[4, 4] = StatePlace.white;
             Board[4, 3] = StatePlace.black;
             Board[3, 4] = StatePlace.black;
-
-            isWhite = isWhiteStart; //pokud true začíná hráč s bílými kameny
         }
-
-        public StatePlace[,] Board { get; }
-        public bool isWhite { get; private set; }
-
-        private int numberRows, numberCol, depth;
-
-        public override int MaxDepth => depth;
 
         public void SetMinimaxDepth(int maxDepth)
         {
@@ -52,10 +57,10 @@ namespace Reversi
         {
             int boardValue = 0;
 
-            // +1 pro světlé kameny a -1 pro tmavé
+            // +1 for light stones and -1 for dark ones
             for (int r = 0; r < numberRows; r++)
             {
-                for (int c = 0; c < numberCol; c++)
+                for (int c = 0; c < numberCols; c++)
                 {
                     if (state[r, c] == StatePlace.white)
                     {
@@ -72,27 +77,19 @@ namespace Reversi
 
         protected override StatePlace[,] GetCurrentBoardState(StatePlace[,] state, MinimaxMove move, bool isWhite)
         {
-            // vytvoření nové plochy s aktuálním tahem
-            var states = new StatePlace[numberRows, numberCol];
-            for (int r = 0; r < numberRows; r++)
-            {
-                for (int c = 0; c < numberCol; c++)
-                {
-                    states[r, c] = state[r, c];
-                }
-            }
+            var newState = (StatePlace[,])state.Clone();
 
-            states[move.row, move.column] = isWhite ? StatePlace.white : StatePlace.black;
+            newState[move.Row, move.Column] = isWhite ? StatePlace.white : StatePlace.black;
 
-            return states;
+            return newState;
         }
 
         protected override IEnumerable<MinimaxMove> GetMoves(StatePlace[,] state, bool isWhite)
         {
-            // nalezení všech možných tahů aktuálního hráče
+            // find all possible turns of current player
             for (int r = 0; r < numberRows; r++)
             {
-                for (int c = 0; c < numberCol; c++)
+                for (int c = 0; c < numberCols; c++)
                 {
                     if (IsValid(state, isWhite, r, c))
                     {
@@ -104,18 +101,18 @@ namespace Reversi
 
         protected override bool IsInCorner(MinimaxMove move)
         {
-            if ((move.column == 0 && move.row == 0) || (move.column == 0 && move.row == (numberRows - 1)) || (move.column == (numberCol - 1) && move.row == 0) || (move.column == (numberCol - 1) && move.row == (numberRows - 1))) return true;
-            return false;
+            return ((move.Column == 0 && move.Row == 0) || (move.Column == 0 && move.Row == (numberRows - 1)) || 
+                (move.Column == (numberCols - 1) && move.Row == 0) || (move.Column == (numberCols - 1) && move.Row == (numberRows - 1)));
         }
 
         private bool ValidMove(StatePlace[,] state, int row, int col, StatePlace player, StatePlace enemy, int dirRow, int dirCol)
         {
-            // prohledání platnosti tahu do jednoho směru - je tím směrem obarvené tlačítko hráče
-            if (row + dirRow < numberRows && row + dirRow >= 0 && col + dirCol < numberCol && col + dirCol >= 0 && state[row + dirRow, col + dirCol] == enemy)
+            // check validity of move - in that direction is player stone
+            if (row + dirRow < numberRows && row + dirRow >= 0 && col + dirCol < numberCols && col + dirCol >= 0 && state[row + dirRow, col + dirCol] == enemy)
             {
-                for (int currentRow = row + 2* dirRow, currentCol = col + 2* dirCol;
-                    currentRow < numberRows && currentRow >= 0 && currentCol < numberCol && currentCol >= 0;
-                    currentRow = currentRow + dirRow, currentCol = currentCol + dirCol)
+                for (int currentRow = row + 2 * dirRow, currentCol = col + 2 * dirCol;
+                    currentRow < numberRows && currentRow >= 0 && currentCol < numberCols && currentCol >= 0;
+                    currentRow += dirRow, currentCol += dirCol)
                 {
                     if (state[currentRow, currentCol] == player)
                     {
@@ -127,20 +124,14 @@ namespace Reversi
                     }
                 }
             }
+
             return false;
         }
 
         private bool IsValid(StatePlace[,] state, bool isWhite, int row, int col)
         {
-            // oveření platnosti tahu
-            if ((row >= 0 && row < 8) && (col >= 0 && col < 8)) 
-            {
-                if (state[row, col] != StatePlace.empty)
-                {
-                    return false;
-                }
-            }
-            else
+            // check validity of move 
+            if (row < 0 || row >= numberRows || col < 0 || col >= numberCols || state[row, col] != StatePlace.empty)
             {
                 return false;
             }
@@ -148,97 +139,78 @@ namespace Reversi
             var player = isWhite ? StatePlace.white : StatePlace.black;
             var enemy = isWhite ? StatePlace.black : StatePlace.white;
 
-            // kontrola pod
-            if(ValidMove(state, row, col, player, enemy, 1 , 0)) return true;
+            for (int dirRow = -1; dirRow <= 1; dirRow++)
+            {
+                for (int dirCol = -1; dirCol <= 1; dirCol++)
+                {
+                    if (dirRow == 0 && dirCol == 0)
+                    {
+                        continue;
+                    }
 
-            // kontrola pod vpravo
-            if (ValidMove(state, row, col, player, enemy, 1, 1)) return true;
-
-            // kontrola pod vlevo
-            if (ValidMove(state, row, col, player, enemy, 1, -1)) return true;
-
-            // kontrola pravé
-            if (ValidMove(state, row, col, player, enemy, 0, 1)) return true;
-
-            // kontrola levé
-            if (ValidMove(state, row, col, player, enemy, 0, -1)) return true;
-
-            // kontrola nad
-            if (ValidMove(state, row, col, player, enemy, -1, 0)) return true;
-
-            // kontrola nad vpravo
-            if (ValidMove(state, row, col, player, enemy, -1, 1)) return true;
-
-            // kontrola nad vlevo
-            if (ValidMove(state, row, col, player, enemy, -1, -1)) return true;
+                    if (ValidMove(state, row, col, player, enemy, dirRow, dirCol))
+                    {
+                        return true;
+                    }
+                }
+            }
 
             return false;
         }
 
         private void ControlMove(int row, int col, StatePlace enemy, StatePlace player, int dirRow, int dirCol)
         {
-            // změna tlačítek určitým směrem
-            if (row + dirRow < numberRows && row + dirRow >= 0 && col + dirCol < numberCol && col + dirCol >=0 && Board[row + dirRow, col + dirCol] == enemy)
+            // change stones in given direction
+            if (row + dirRow < numberRows && row + dirRow >= 0 && col + dirCol < numberCols && col + dirCol >= 0 && Board[row + dirRow, col + dirCol] == enemy)
             {
                 bool find = false;
-                for (int currentRow = row + 2*dirRow, currentCol = col + 2*dirCol; 
-                    currentRow < numberRows && currentRow >= 0 && currentCol < numberCol && currentCol >= 0;
-                    currentRow = currentRow + dirRow, currentCol = currentCol + dirCol) //hledání jestli někde aktuálním směrem je hráčův kámen - kvůli spojení kamenů
+                for (int currentRow = row + 2 * dirRow, currentCol = col + 2 * dirCol;
+                    currentRow < numberRows && currentRow >= 0 && currentCol < numberCols && currentCol >= 0;
+                    currentRow += dirRow, currentCol += dirCol) // search for player stone - connection of stones
                 {
-                    if (Board[currentRow, currentCol] == StatePlace.empty) break; //při prázdném políčku je zbytečné hledat dál (nemůže se spojit)
+                    if (Board[currentRow, currentCol] == StatePlace.empty) break; // if empty stone is not possible to connect
                     if (Board[currentRow, currentCol] == player) find = true;
                 }
                 if (find)
                 {
                     for (int currentRow = row + dirRow, currentCol = col + dirCol;
-                        currentRow < numberRows && currentRow >= 0 && currentCol < numberCol && currentCol >= 0;
-                        currentRow = currentRow + dirRow, currentCol = currentCol + dirCol)
+                        currentRow < numberRows && currentRow >= 0 && currentCol < numberCols && currentCol >= 0;
+                        currentRow += dirRow, currentCol += dirCol)
                     {
                         if (Board[currentRow, currentCol] == StatePlace.empty || Board[currentRow, currentCol] == player) break;
-                        Board[currentRow, currentCol] = player; //změna políček
+                        Board[currentRow, currentCol] = player; // change of stones
                     }
                 }
             }
         }
 
-        public bool MakeMove(int row, int col) 
+        public bool MakeMove(int row, int col)
         {
-            // provedení aktuálního tahu pokud je platný
-            if (!IsValid(Board, isWhite, row, col))
+            // do turn if valid
+            if (!IsValid(Board, IsWhite, row, col))
             {
                 return false;
             }
 
-            var player = isWhite ? StatePlace.white : StatePlace.black;
-            var enemy = isWhite ? StatePlace.black : StatePlace.white;
+            var player = IsWhite ? StatePlace.white : StatePlace.black;
+            var enemy = IsWhite ? StatePlace.black : StatePlace.white;
 
             Board[row, col] = player;
 
-            // změnit pod pokud je tam soupeř
-            ControlMove(row, col, enemy, player, 1, 0);
+            for (int dirRow = -1; dirRow <= 1; dirRow++)
+            {
+                for (int dirCol = -1; dirCol <= 1; dirCol++)
+                {
+                    if (dirRow == 0 && dirCol == 0)
+                    {
+                        continue;
+                    }
 
-            // změnit nad
-            ControlMove(row, col, enemy, player, -1, 0);
+                    ControlMove(row, col, enemy, player, dirRow, dirCol);
+                }
+            }
 
-            // změnit pravý
-            ControlMove(row, col, enemy, player, 0, 1);
-
-            // změnit levý
-            ControlMove(row, col, enemy, player, 0, -1);
-
-            // změnit pod pravý
-            ControlMove(row, col, enemy, player, 1, 1);
-
-            // změnit pod levý
-            ControlMove(row, col, enemy, player, 1, -1);
-
-            // změnit nad pravý
-            ControlMove(row, col, enemy, player, -1, 1);
-
-            // změnit pod levý
-            ControlMove(row, col, enemy, player, -1, -1);
-
-            isWhite = !isWhite; //změna hráče
+            IsWhite = !IsWhite; // change of player
 
             return true;
         }
@@ -247,12 +219,12 @@ namespace Reversi
         {
             var result = new GameResult();
 
-            if (EndingTest(Board, isWhite)) //pokud aktuální hráč nemůže táhnout -> konec hry
+            if (EndingTest(Board, isWhite)) // if current player cant have valid moves -> end of game
             {
-                // spočítání obsazenosti plochy (pokud není konec hry není potřeba vědět početní rozložení barev)
+                // compute occupied stones
                 for (int i = 0; i < numberRows; i++)
                 {
-                    for (int j = 0; j < numberCol; j++)
+                    for (int j = 0; j < numberCols; j++)
                     {
                         if (Board[i, j] == StatePlace.black)
                         {
@@ -288,8 +260,8 @@ namespace Reversi
 
         protected override bool EndingTest(StatePlace[,] board, bool isWhite)
         {
-            // neexistují tahy pro aktuálního hráče -> konec hry
-            foreach (var move in GetMoves(board, isWhite))
+            // current player dont have valid moves -> end of game
+            foreach (var _ in GetMoves(board, isWhite))
             {
                 return false;
             }

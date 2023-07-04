@@ -90,7 +90,7 @@ namespace Reversi
             this.buttonStartGame.TabIndex = 0;
             this.buttonStartGame.Text = "Start";
             this.buttonStartGame.UseVisualStyleBackColor = false;
-            this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
+            this.buttonStartGame.Click += new System.EventHandler(this.ButtonStartGame_Click);
             // 
             // title
             // 
@@ -140,7 +140,7 @@ namespace Reversi
             this.button2.TabIndex = 0;
             this.button2.Text = "2 hráči";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -155,7 +155,7 @@ namespace Reversi
             this.button1.TabIndex = 1;
             this.button1.Text = "1 hráč";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Start
             // 
